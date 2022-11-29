@@ -45,35 +45,39 @@ def parseUserInfo():
     return json.loads(allUser)
 
 
-def save(uid, token):
-    url = 'http://sxbaapp.zcj.jyt.henan.gov.cn/interface/clockindaily.ashx'
+def save(user, uid, token):
+    url = 'http://sxbaapp.zcj.jyt.henan.gov.cn/interface/clockindaily20220827.ashx'
 
-    d = "{\"dtype\":3,\"uid\":" + "\"" + uid + "\"}" + token
-    headers["sign"] = getMd5(d)
+    d = "{\"dtype\":1,\"uid\":" + "\"" + uid + "\"," \
+        + "\"address\":" + "\"" + user["address"] + "\"" + ",\"phonetype\":" + "\"" + user["deviceType"] + "\"" \
+        + ",\"probability\":-1,\"longitude\":" + user["longitude"] + ",\"latitude\":" + user["latitude"] + "}"
 
-    res = requests.post()
+    sign = getMd5(d + token)
+
+    headers["sign"] = sign
+
+    res = requests.post(url, headers=headers, data=json.dumps(d))
+
+    if res.json()["code"] == 1001:
+        return True
+    return False
 
 
 def getToken():
     url = 'http://sxbaapp.zcj.jyt.henan.gov.cn/interface/token.ashx'
     res = requests.post(url, headers=headers)
     print('请求token:', res.json()["data"]["token"])
-    return 'b41681c919f1fe1551421751bf13a1d11891671131e415d1'
-    # return res.json()["data"]["token"]
+    return res.json()["data"]["token"]
 
 
 def login(user, password, deviceId, token):
     d = '{\"phone\":\"' + user["phone"] + "\",\"password\":" + "\"" + password + "\"," + \
-        "\"dtype\":6,\"dToken\":" + "\"" + deviceId + "\"}" + token
-    headers["sign"] = getMd5(d)
-
-    data = '{\"phone\":\"' + user["phone"] + "\",\"password\":" + "\"" + password + "\"," + \
-           "\"dtype\":6,\"dToken\":" + "\"" + deviceId + "\"}"
+        "\"dtype\":6,\"dToken\":" + "\"" + deviceId + "\"}"
+    headers["sign"] = getMd5(d + token)
 
     url = 'http://sxbaapp.zcj.jyt.henan.gov.cn/interface/relog.ashx'
-    res = requests.post(url, headers=headers, data=json.dumps(data))
-    # return res.json()["data"]["uid"]
-    return "123"
+    res = requests.post(url, headers=headers, data=json.dumps(d))
+    return res.json()["data"]["uid"]
 
 
 def prepareSign(user):
@@ -85,10 +89,12 @@ def prepareSign(user):
     deviceId = getDeviceId()
 
     uid = login(user, password, deviceId, token)
+    resp = save(user, uid, token)
 
-    uid = "123"
-
-    resp = save(uid, token)
+    if resp:
+        print('打卡成功！')
+        return
+    print('打卡失败')
 
 
 if __name__ == '__main__':
