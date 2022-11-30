@@ -11,7 +11,7 @@ pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
 
 headers = {
     "os": "android",
-    "phone": "HuaWei|P30|12",
+    "phone": "Xiaomi|Mi 12|12",
     "appVersion": "39",
     "Sign": "Sign",
     "cl_ip": "192.168.1.2",
@@ -38,6 +38,7 @@ def getDeviceId():
 def parseUserInfo():
     allUser = ''
     if os.path.exists(pwd + "user.json"):
+        print('找到配置文件，将从配置文件加载信息！')
         with open(pwd + "user.json", encoding="utf-8") as f:
             lines = f.readlines()
             for line in lines:
@@ -59,9 +60,7 @@ def save(user, uid, token):
         "longitude": user["longitude"],
         "latitude": user["latitude"]
     }
-
     headers["Sign"] = getMd5(json.dumps(data) + token)
-
     res = requests.post(url, headers=headers, data=json.dumps(data))
 
     if res.json()["code"] == 1001:
@@ -72,7 +71,9 @@ def save(user, uid, token):
 def getToken():
     url = 'http://sxbaapp.zcj.jyt.henan.gov.cn/interface/token.ashx'
     res = requests.post(url, headers=headers)
-    return res.json()["data"]["token"]
+    if res.json()["code"] == 1001:
+        return True, res.json()["data"]["token"]
+    return False, res.json()["msg"]
 
 
 def login(user, token):
@@ -93,29 +94,38 @@ def login(user, token):
 
 def prepareSign(user):
     if not user["enable"]:
+        print(user['alias'], '未启用打卡，即将跳过')
         return
+
+    print('已加载用户', user['alias'], '即将开始打卡')
 
     headers["phone"] = user["deviceType"]
 
-    token = getToken()
+    res, token = getToken()
+    if not res:
+        print('用户', user['alias'], '获取Token失败')
+        MessagePush.pushMessage('职校家园打卡失败！', '职校家园打卡获取Token失败，错误原因：' + token, user["pushKey"])
+        return
 
     loginResp = login(user, token)
 
     if loginResp["code"] != 1001:
-        print('登录账号失败，错误原因：', loginResp["msg"])
+        print('用户', user['alias'], '登录账号失败，错误原因：', loginResp["msg"])
+        MessagePush.pushMessage('职校家园登录失败！', '职校家园登录失败，错误原因：' + loginResp["msg"], user["pushKey"])
         return
 
     uid = loginResp["data"]["uid"]
-    resp = save(user, uid, token)
+    resp, msg = save(user, uid, token)
 
     if resp:
-        print('打卡成功！')
+        print(user["alias"], '打卡成功！')
+        MessagePush.pushMessage('职校家园打卡成功！', '用户：' + user["phone"] + '职校家园打卡成功!', user["pushKey"])
         return
-    print('打卡失败')
+    print(user["alias"], "打卡失败")
+    MessagePush.pushMessage('职校家园打卡失败！', '用户：' + user["phone"] + '职校家园打卡失败!原因:' + msg, user["pushKey"])
 
 
 if __name__ == '__main__':
-
     users = parseUserInfo()
 
     for user in users:
