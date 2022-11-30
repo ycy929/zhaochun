@@ -110,7 +110,7 @@ Auto-ShiXiBeiAn
 | phone      | 手机号                                                       |
 | password   | 密码                                                         |
 | deviceType | 设备类型,格式:手机品牌英文名称\|手机代号\|安卓系统版本,例如:Xiaomi\|Mi 13\|13 |
-| deviceId   | 设备ID,36位字母+数字组合,我后续会单独做一个接口提供          |
+| deviceId   | 设备ID,36位字母+数字组合,(点我获取随机ID)[http://did.sxba.xuanran.cc]          |
 | address    | 打卡地址,例如中国河南省洛阳市xxxxx                           |
 | longitude  | 打卡位置精度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
 | latitude   | 打卡位置纬度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
