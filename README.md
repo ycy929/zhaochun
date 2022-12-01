@@ -128,6 +128,7 @@ Name填USERS
 Secret填改好的配置文件
 
 ![3.png](https://tc.xuanran.cc/2022/11/13/2143b390f8199.png)
+**以下图片复用了工学云自动打卡的图片，除secret中需要填的内容不一样外与视频教程无其他区别**
 ![4.png](https://tc.xuanran.cc/2022/11/13/8de9cb85e479b.png)
 
 4.运行测试
