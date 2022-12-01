@@ -10,7 +10,7 @@ Auto-ShiXiBeiAn
 </br>
 </p>
 </br>
-<a target="_blank" href="https://www.bilibili.com/video/BV1VP4y117w8/?spm_id_from=333.999.0.0&vd_source=23b414916f0ead82eaa42a85d58614c8">视频教程正在制作中...</ a>
+<a target="_blank" href="https://b23.tv/hsaDxKf">视频教程</a>
 </div>
 </br>
 
@@ -68,16 +68,13 @@ Auto-ShiXiBeiAn
 优点：适合没有自己服务器的人使用。
 
 
-缺点：
-
-1、每日打卡时间无法保证十分准时，拥有10-30分钟的误差。
+缺点： 每日打卡时间无法保证十分准时，拥有10-30分钟的误差。
 
 </br>
 
 1.点击Star后Fork本仓库🤪
-
-![1.png](https://tc.xuanran.cc/2022/11/13/1932d085c97c2.png)
-![2.png](https://tc.xuanran.cc/2022/11/13/c6e9abebb113c.png)
+![1.png](https://tc.xuanran.cc/2022/12/01/9b1d336235e28.png)
+![2.png](https://tc.xuanran.cc/2022/12/01/2c1c3b427a14a.png)
 </br>
 2.准备配置文件🤔
 
@@ -139,7 +136,7 @@ Secret填改好的配置文件
 ![7.png](https://tc.xuanran.cc/2022/11/13/2a2b4b7e01884.png)
 ![8.png](https://tc.xuanran.cc/2022/11/13/bd1cd3218f77a.png)
 ![9.png](https://tc.xuanran.cc/2022/11/13/33c6cec2e37ec.png)
-![10.png](https://tc.xuanran.cc/2022/11/13/a9e80f17d304b.png)
+![4.png](https://tc.xuanran.cc/2022/12/01/735c10732d2e0.png)
 </br></br></br></br>
 
 至此，自动打卡将会在每天8点左右自动运行打卡。😉
