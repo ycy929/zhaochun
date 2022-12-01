@@ -24,17 +24,6 @@ def getMd5(text: str):
     return md5(text.encode('utf-8')).hexdigest()
 
 
-def getDeviceId():
-    ret = ""
-    for i in range(36):
-        num = random.randint(0, 9)
-        letter = chr(random.randint(97, 122))  # 取小写字母
-        Letter = chr(random.randint(65, 90))  # 取大写字母
-        s = str(random.choice([num, letter, Letter]))
-        ret += s
-    return ret
-
-
 def parseUserInfo():
     allUser = ''
     if os.path.exists(pwd + "user.json"):
