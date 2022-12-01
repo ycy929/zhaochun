@@ -131,6 +131,8 @@ Secret填改好的配置文件
 ![4.png](https://tc.xuanran.cc/2022/11/13/8de9cb85e479b.png)
 
 4.运行测试
+
+**以下部分图片复用了工学云自动打卡，除左上角forked from xxxx外与视频教程无其他区别**
 ![5.png](https://tc.xuanran.cc/2022/11/13/500e789b3dfec.png)
 ![6.png](https://tc.xuanran.cc/2022/11/13/1366e5e0ced97.png)
 ![7.png](https://tc.xuanran.cc/2022/11/13/2a2b4b7e01884.png)
