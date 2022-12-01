@@ -1,12 +1,12 @@
 import json
 import os
-import random
 from hashlib import md5
 
 import requests
 
 import MessagePush
 
+requests.adapters.DEFAULT_RETRIES = 5
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
 
 headers = {
