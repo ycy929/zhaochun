@@ -91,7 +91,7 @@ Auto-ShiXiBeiAn
     "deviceType": "Xiaomi|Mi 13|13",
     "deviceId": "设备ID",
     "address": "打卡地址",
-    "longitude": "位置精度",
+    "longitude": "位置经度",
     "latitude": "位置纬度",
     "pushKey": "推送Key"
   }
@@ -109,7 +109,7 @@ Auto-ShiXiBeiAn
 | deviceType | 设备类型,格式:手机品牌英文名称\|手机代号\|安卓系统版本,例如:Xiaomi\|Mi 13\|13 |
 | deviceId   | 设备ID,36位字母+数字组合,[点我获取随机ID](http://did.sxba.xuanran.cc)          |
 | address    | 打卡地址,例如中国河南省洛阳市xxxxx                           |
-| longitude  | 打卡位置精度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
+| longitude  | 打卡位置经度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
 | latitude   | 打卡位置纬度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
 | pushKey    | 打卡结果微信推送，微信推送使用的是pushPlus，请到官网绑定微信([传送门](https://www.pushplus.plus/))，然后在发送消息里面把你的token复制出来粘贴到pushKey这项 |
 
