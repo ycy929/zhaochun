@@ -240,7 +240,7 @@ Settings-Secrets-Actions-下面Repository secrets有个USERS，点击小箭头�
 ![微信截图_20221130142844.png](https://tc.xuanran.cc/2022/11/30/1dad103cbcd0a.png)
 
 公众号：
-![qrcode_for_gh_1a88b5dc9254_258.jpg](https://tc.xuanran.cc/2022/12/02/70818d27867fc.jpg)
+![e87a1043ea8f4fada3bb99ba8e35767.jpg](https://tc.xuanran.cc/2022/12/02/d1b00d4d20886.jpg)
 
 
 
