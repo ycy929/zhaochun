@@ -3,11 +3,17 @@ import os
 from hashlib import md5
 
 import requests
+from requests.adapters import HTTPAdapter
 
 import MessagePush
 
-requests.adapters.DEFAULT_RETRIES = 5
+requests.adapters.DEFAULT_RETRIES = 10
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
+
+s = requests.session()
+s.mount('http://', HTTPAdapter(max_retries=10))
+s.mount('https://', HTTPAdapter(max_retries=10))
+s.keep_alive = False
 
 headers = {
     "os": "android",
