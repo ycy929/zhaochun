@@ -11,8 +11,8 @@ requests.adapters.DEFAULT_RETRIES = 10
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
 
 s = requests.session()
-s.mount('http://', HTTPAdapter(max_retries=5))
-s.mount('https://', HTTPAdapter(max_retries=5))
+s.mount('http://', HTTPAdapter(max_retries=10))
+s.mount('https://', HTTPAdapter(max_retries=10))
 s.keep_alive = False
 
 headers = {
