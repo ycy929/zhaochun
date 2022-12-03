@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from hashlib import md5
 
 import requests
@@ -118,6 +119,9 @@ def prepareSign(user):
 
 
 if __name__ == '__main__':
+    for i in range(1,10):
+        print(getToken())
+    sys.exit(0)
     users = parseUserInfo()
 
     for user in users:
