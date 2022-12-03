@@ -7,7 +7,7 @@ import requests
 
 import MessagePush
 
-requests.adapters.DEFAULT_RETRIES = 8
+requests.adapters.DEFAULT_RETRIES = 12
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
 
 s = requests.session()
@@ -119,9 +119,6 @@ def prepareSign(user):
 
 
 if __name__ == '__main__':
-    for i in range(1,10):
-        print(getToken())
-    sys.exit(0)
     users = parseUserInfo()
 
     for user in users:
