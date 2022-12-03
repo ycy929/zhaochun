@@ -1,9 +1,9 @@
 import json
 import os
-import sys
 from hashlib import md5
 
 import requests
+from requests.adapters import HTTPAdapter
 
 import MessagePush
 
