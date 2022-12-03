@@ -7,7 +7,7 @@ import requests
 
 import MessagePush
 
-requests.adapters.DEFAULT_RETRIES = 5
+requests.adapters.DEFAULT_RETRIES = 8
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
 
 s = requests.session()
