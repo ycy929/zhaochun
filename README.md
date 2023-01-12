@@ -92,6 +92,7 @@ Auto-ShiXiBeiAn
     "password": "123456...",
     "deviceType": "Xiaomi|Mi 13|13",
     "deviceId": "设备ID",
+    "randomLocation": true,
     "address": "打卡地址",
     "longitude": "位置经度",
     "latitude": "位置纬度",
@@ -102,18 +103,19 @@ Auto-ShiXiBeiAn
 
 其配置含义如下：
 
-| 参数名称   | 含义                                                         |
-| ---------- | ------------------------------------------------------------ |
-| enable     | 是否启用该用户的打卡（true或false)                           |
-| alias      | 别名，用于在打卡日志中标识不同用户，可空。                   |
-| phone      | 手机号                                                       |
-| password   | 密码                                                         |
+| 参数名称 | 含义                                                         |
+| -- | ------------------------------------------------------------ |
+| enable | 是否启用该用户的打卡（true或false)                           |
+| alias | 别名，用于在打卡日志中标识不同用户，可空。                   |
+| phone | 手机号                                                       |
+| password | 密码                                                         |
 | deviceType | 设备类型,格式:手机品牌英文名称\|手机代号\|安卓系统版本,例如:Xiaomi\|Mi 13\|13 |
-| deviceId   | 设备ID,36位字母+数字组合,[点我获取随机ID](http://did.sxba.xuanran.cc)          |
-| address    | 打卡地址,例如中国河南省洛阳市xxxxx                           |
-| longitude  | 打卡位置经度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
-| latitude   | 打卡位置纬度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
-| pushKey    | 打卡结果微信推送，微信推送使用的是pushPlus，请到官网绑定微信([传送门](https://www.pushplus.plus/))，然后在发送消息里面把你的token复制出来粘贴到pushKey这项 |
+| deviceId | 设备ID,36位字母+数字组合,[点我获取随机ID](http://did.sxba.xuanran.cc)          |
+| randomLocation   | 打卡位置浮动，启用后每次打卡系统将会在你原有的经纬度的基础之上删掉最后一位数字并随机加入一位数字，使每次打卡经纬度不同      |
+| address | 打卡地址,例如中国河南省洛阳市xxxxx                           |
+| longitude | 打卡位置经度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
+| latitude | 打卡位置纬度,通过坐标拾取来完成，[传送门](https://jingweidu.bmcx.com/) |
+| pushKey | 打卡结果微信推送，微信推送使用的是pushPlus，请到官网绑定微信([传送门](https://www.pushplus.plus/))，然后在发送消息里面把你的token复制出来粘贴到pushKey这项 |
 
 
 
