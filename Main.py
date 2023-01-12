@@ -18,9 +18,9 @@ s.keep_alive = False
 headers = {
     "os": "android",
     "phone": "Xiaomi|Mi 12|12",
-    "appVersion": "39",
+    "appVersion": "40",
     "Sign": "Sign",
-    "cl_ip": "192.168.1.2",
+    "cl_ip": "192.168.1.3",
     "User-Agent": "okhttp/3.14.9",
     "Content-Type": "application/json;charset=utf-8"
 }
