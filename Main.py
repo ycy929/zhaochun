@@ -46,14 +46,20 @@ def parseUserInfo():
 def save(user, uid, token):
     url = 'http://sxbaapp.zcj.jyt.henan.gov.cn/interface/clockindaily20220827.ashx'
 
+    longitude = user["longitude"]
+    latitude = user["latitude"]
+    if user["randomLocation"]:
+        longitude = longitude[0:len(longitude) - 1] + str(random.randint(0, 10))
+        latitude = latitude[0:len(latitude) - 1] + str(random.randint(0, 10))
+
     data = {
         "dtype": 1,
         "uid": uid,
         "address": user["address"],
         "phonetype": user["deviceType"],
         "probability": -1,
-        "longitude": user["longitude"],
-        "latitude": user["latitude"]
+        "longitude": longitude,
+        "latitude": latitude
     }
     headers["Sign"] = getMd5(json.dumps(data) + token)
     res = requests.post(url, headers=headers, data=json.dumps(data))
