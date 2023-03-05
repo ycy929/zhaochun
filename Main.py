@@ -6,7 +6,7 @@ from hashlib import md5
 import requests
 from requests.adapters import HTTPAdapter
 
-import MessagePush
+from utils import AES, UTC as pytz, MessagePush
 
 requests.adapters.DEFAULT_RETRIES = 10
 pwd = os.path.dirname(os.path.abspath(__file__)) + os.sep
@@ -124,7 +124,8 @@ def prepareSign(user):
         MessagePush.pushMessage('职校家园打卡成功！', '用户：' + user["phone"] + '职校家园打卡成功!', user["pushKey"])
         return
     print(user["alias"], "打卡失败")
-    MessagePush.pushMessage('职校家园打卡失败！', '用户：' + user["phone"] + '职校家园打卡失败!原因:' + msg, user["pushKey"])
+    MessagePush.pushMessage('职校家园打卡失败！', '用户：' + user["phone"] + '职校家园打卡失败!原因:' + msg,
+                            user["pushKey"])
 
 
 if __name__ == '__main__':
