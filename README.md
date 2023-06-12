@@ -30,6 +30,11 @@ Auto-ShiXiBeiAn
 
 **6、如基于或参考此项目进行二次开发，请注明原作者并使用GPL2.0许可证**
 
+
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/XuanRanDev/Auto-ShiXiBeiAn?include_prereleases)
+![GitHub](https://img.shields.io/github/license/XuanRanDev/Auto-ShiXiBeiAn)
+![GitHub forks](https://img.shields.io/github/forks/XuanRanDev/Auto-ShiXiBeiAn)
+
 </br>
 
 ## 目录
